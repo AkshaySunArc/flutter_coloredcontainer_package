@@ -1,23 +1,19 @@
 part of coloredcontainer;
 
 class ColoredContainer extends StatelessWidget {
-  const ColoredContainer({Key? key, required this.child, this.containerColor})
+  const ColoredContainer({Key? key, required this.onClick, this.containerColor,required this.text,})
       : super(key: key);
 
   final Color? containerColor;
-  final Widget child;
+  final VoidCallback onClick;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5.0),
-        color: containerColor ?? Colors.blue.withOpacity(0.35),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(10.00),
-        child: child,
-      ),
+    return MaterialButton(
+        onPressed: onClick,
+        color: containerColor,
+        child: Text(text),
     );
   }
 }
