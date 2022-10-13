@@ -1,7 +1,7 @@
 part of coloredcontainer;
 
 class ColoredContainer extends StatelessWidget {
-  const ColoredContainer({Key? key, required this.onClick, this.containerColor,required this.text,})
+   ColoredContainer({Key? key, required this.onClick, this.containerColor,required this.text,})
       : super(key: key);
 
   final Color? containerColor;
